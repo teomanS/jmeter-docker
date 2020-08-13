@@ -9,9 +9,9 @@ RUN mkdir -p /opt && mkdir -p /opt/jmeter && mkdir -p /opt/jmxfolder && cd /opt/
     apk del wget && \
     rm -f apache-jmeter-$JMETERVERSION.tgz 
 
-RUN addgroup -S jmetergroup && adduser -S jmeteruser -G jmetergroup && \
-    chown -R jmeteruser:jmetergroup /opt
-
+RUN adduser -S jmeteruser -g 0 && \
+    chgrp -R 0 /opt && \
+    chmod -R 777 /opt
 
 USER jmeteruser
 WORKDIR /opt/jmeter/apache-jmeter-$JMETERVERSION/bin
