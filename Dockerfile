@@ -13,8 +13,8 @@ RUN addgroup -S jmetergroup && adduser -S jmeteruser -G jmetergroup && \
     chown -R jmeteruser:jmetergroup /opt
 
 
-
 USER jmeteruser
+WORKDIR /opt/jmeter/apache-jmeter-$JMETERVERSION/bin
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
