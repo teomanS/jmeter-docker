@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-ENV JMETERVERSION="5.3"
+ENV JMETERVERSION="5.4"
 
 RUN mkdir -p /opt && mkdir -p /opt/jmeter && mkdir -p /opt/jmxfolder && cd /opt/jmeter && \
     apk --update --no-cache add wget openjdk8&& \
